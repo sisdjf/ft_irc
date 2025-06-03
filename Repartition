@@ -1,0 +1,53 @@
+IRC :
+
+A — Gestion des connexions et des clients (côté bas-niveau / serveur)
+Responsable de la couche serveur et de la gestion des clients :
+
+Server.cpp / Server.hpp
+
+Acceptation des connexions (socket, bind, listen, accept)
+
+Multiplexing I/O avec poll() ou select()
+
+Parsing des requêtes basiques
+
+Authentification via mot de passe
+
+Client.cpp / Client.hpp
+
+Création et gestion de la structure client (file descriptor, nickname, état, etc.)
+
+Gestion des buffers (lecture/écriture non-bloquante)
+
+Gestion des sockets et de la logique réseau
+
+Implémentation de commandes de connexion :
+
+PASS, NICK, USER, QUIT, PING, PONG
+
+ Objectif : Offrir une base robuste qui gère la communication réseau et l’état de chaque client.
+
+🔹B — Gestion des canaux, commandes IRC et logique applicative
+Responsable de la logique IRC (protocoles et structures de données) :
+
+Channel.cpp / Channel.hpp
+
+Création, suppression, ajout/retrait de membres
+
+Droits des opérateurs
+
+IrcMessageBuilder.cpp / IrcMessageBuilder.hpp + IrcNumericReplies.hpp
+
+Construction des messages IRC valides
+
+Codes de réponse (001, 403, etc.)
+
+Implémentation des commandes :
+
+JOIN, PART, TOPIC, KICK, INVITE, MODE, PRIVMSG, NOTICE
+
+Gestion des droits, opérateurs, modes de canal
+
+Bonus : Bot.hpp / Bot.cpp si vous visez les bonus
+
+Objectif : Gérer les interactions utilisateurs et les fonctionnalités IRC principales.
